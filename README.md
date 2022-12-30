@@ -30,7 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [
+3-column-preview-card-component](https://www.frontendmentor.io/solutions/3column-preview-card-component-551QSL0zGZ)
 - Live Site URL: [copreca](https://copreca.netlify.app)
 
 
