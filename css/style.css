@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* || RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    display: block;
+}
+
+/* || VARIABLES */
+:root {
+    /* FONTS */
+    --HEADERS-FF: 'Big Shoulders Display', cursive;
+    --BODY-FF: 'Lexend Deca', sans-serif;
+
+    /* COLORS */
+    --BRIGHT-ORANGE: hsl(31, 77%, 52%);
+    --DARK-CYAN: hsl(184, 100%, 22%);
+    --VERY-DARK-CYAN: hsl(179, 100%, 13%);
+    --TRANSPARENT-WHITE: hsla(0, 0%, 100%, 0.75);
+    --VERY-LIGHT-GRAY: hsl(0, 0%, 95%);
+
+    /* BORDERS */
+    --BORDER-RADIUS: 0.5rem;
+}
+
+/* || UTILITY CLASSES */
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -625rem;
+}
+
+/* || GENERAL STYLES */
+html {
+    font-size: 100%;
+    background-color: var(--VERY-LIGHT-GRAY);
+}
+
+body {
+    font-family: var(--BODY-FF);
+    min-height: 100vh;
+
+    display: grid;
+    place-content: center;
+}
+
+main {
+    width: min(100% - 1.5625rem, 65.625rem);
+    margin: 1rem auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+}
+
+.column {
+    padding: 3.125rem;
+}
+
+.column div {
+    margin-bottom: 6rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+
+.column__h2 {
+    font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+    font-family: var(--HEADERS-FF);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--VERY-LIGHT-GRAY);
+}
+
+.column__p {
+    width: 90%;
+    color: var(--TRANSPARENT-WHITE);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.column:first-child {
+    background-color: var(--BRIGHT-ORANGE);
+    border-radius: var(--BORDER-RADIUS) var(--BORDER-RADIUS) 0 0;
+}
+
+.column:nth-child(2) {
+    background-color: var(--DARK-CYAN);
+}
+
+.column:last-child {
+    background-color: var(--VERY-DARK-CYAN);
+    border-radius: 0 0 var(--BORDER-RADIUS) var(--BORDER-RADIUS);
+}
+
+.column a {
+    width: 80%;
+    padding: 1rem;
+    background-color: var(--VERY-LIGHT-GRAY);
+    border: 0.125rem solid var(--VERY-LIGHT-GRAY);
+    border-radius: 1.875rem;
+}
+
+.column:first-child a {
+    color: var(--BRIGHT-ORANGE);
+}
+
+.column:nth-child(2) a {
+    color: var(--DARK-CYAN);
+}
+
+.column:last-child a {
+    color: var(--VERY-DARK-CYAN);
+}
+
+.column a,
+.column a:visited {
+    text-decoration: none;
+    text-align: center;
+}
+
+.column a:hover,
+.column a:focus {
+    background-color: transparent;
+    color: var(--VERY-LIGHT-GRAY);
+}
+
+/* || MEDIA QUERIES */
+@media screen and (min-width: 56.25em) {
+    main {
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .column:first-child {
+        border-radius: var(--BORDER-RADIUS) 0 0 var(--BORDER-RADIUS);
+    }
+
+    .column:last-child {
+        border-radius: 0 var(--BORDER-RADIUS) var(--BORDER-RADIUS) 0;
+    }
+
+    .column a {
+        width: 70%;
+        padding: 1rem 1.5rem;
+    }
+}
