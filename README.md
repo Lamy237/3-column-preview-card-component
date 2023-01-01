@@ -61,6 +61,7 @@ a {
     background-color: hsl(0, 0%, 95%);
     border: 0.125rem solid hsl(0, 0%, 95%);
     border-radius: 1.875rem;
+    text-decoration: none;
 }
 ```
 
